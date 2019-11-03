@@ -77,12 +77,24 @@ public class Client {
 		this.tel = tel;
 	}
 
+	public String getRef() {
+		return ref;
+	}
+	
+	
+	
+	public void setRef(String ref) {
+		this.ref = ref;
+	}
 
 
 	@Override
 	public String toString() {
-		return "Client [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", tel=" + tel + "]";
+		return "Client [id=" + id + ", ref=" + ref + ", nom=" + nom + ", prenom=" + prenom + ", tel=" + tel + "]";
 	}
+
+
+
 	
 	
 	
