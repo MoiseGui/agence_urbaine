@@ -1,4 +1,4 @@
-package com.fstg.Agence.Urbaine.bean;
+package com.fstg.Agence.urbaine.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,19 +6,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class MembreCommision {
+public class MembreCommission {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nom;
 	private String prenom;
-	
-	public MembreCommision() {
+
+	public MembreCommission() {
 	}
 
-	public MembreCommision(Long id, String nom, String prenom) {
-		super();
-		this.id = id;
+	public MembreCommission(String nom, String prenom) {
 		this.nom = nom;
 		this.prenom = prenom;
 	}
@@ -49,9 +48,7 @@ public class MembreCommision {
 
 	@Override
 	public String toString() {
-		return "MembreCommision [id=" + id + ", nom=" + nom + ", prenom=" + prenom + "]";
+		return "MembreCommision [nom=" + nom + ", prenom=" + prenom + "]";
 	}
-	
-	
-	
+
 }

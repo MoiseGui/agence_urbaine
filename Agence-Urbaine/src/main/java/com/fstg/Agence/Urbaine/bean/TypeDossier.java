@@ -1,4 +1,9 @@
-package com.fstg.Agence.Urbaine.bean;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.fstg.Agence.urbaine.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,19 +15,16 @@ public class TypeDossier {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String libelle;
-	
-	
+	private String nom;
+
 	public TypeDossier() {
 	}
 
-
-	public TypeDossier(Long id, String libelle) {
-		super();
+	public TypeDossier(Long id, String nom) {
 		this.id = id;
-		this.libelle = libelle;
+		this.nom = nom;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -31,21 +33,17 @@ public class TypeDossier {
 		this.id = id;
 	}
 
-	public String getLibelle() {
-		return libelle;
+	public String getNom() {
+		return nom;
 	}
 
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
-
 
 	@Override
 	public String toString() {
-		return "TypeDossier [id=" + id + ", libelle=" + libelle + "]";
+		return "TypeDossier [id=" + id + ", nom=" + nom + "]";
 	}
-	
-	
-	
-	
+
 }

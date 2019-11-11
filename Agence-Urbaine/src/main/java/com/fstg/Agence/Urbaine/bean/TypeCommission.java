@@ -1,4 +1,9 @@
-package com.fstg.Agence.Urbaine.bean;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.fstg.Agence.urbaine.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,13 +16,11 @@ public class TypeCommission {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String libelle;
-	
-	
+
 	public TypeCommission() {
 	}
 
 	public TypeCommission(Long id, String libelle) {
-		super();
 		this.id = id;
 		this.libelle = libelle;
 	}
@@ -42,8 +45,5 @@ public class TypeCommission {
 	public String toString() {
 		return "TypeCommission [id=" + id + ", libelle=" + libelle + "]";
 	}
-	
-	
-	
-	
+
 }

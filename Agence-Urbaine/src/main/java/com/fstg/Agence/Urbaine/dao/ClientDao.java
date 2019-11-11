@@ -1,11 +1,12 @@
-package com.fstg.Agence.Urbaine.dao;
+package com.fstg.Agence.urbaine.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.fstg.Agence.Urbaine.bean.Client;
+import ch.qos.logback.core.net.server.Client;
 
 @Repository
 public interface ClientDao extends JpaRepository<Client, Long> {
-	public Client findByRef(String ref);
+    public Client findByNomAndPrenom(String nom, String prenom);
+    public Client findByTel(Long tel);
 }

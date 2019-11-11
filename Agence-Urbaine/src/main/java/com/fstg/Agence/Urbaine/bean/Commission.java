@@ -1,8 +1,9 @@
-package com.fstg.Agence.Urbaine.bean;
+package com.fstg.Agence.urbaine.bean;
 
 import java.util.Date;
 import java.util.List;
 
+//import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,88 +15,84 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Commission {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	@Temporal(TemporalType.DATE)
-	private Date dateDepartCommission;
-	@Temporal(TemporalType.DATE)
-	private Date dateFinCommission;
-	@ManyToOne
-	private MembreCommision chefCommision;
-	@OneToMany(mappedBy = "commission")
-	private List<CommisionItem> commisionItems;
-	
-	
-	public Commission() {
-	}
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String ref;
+    @Temporal(TemporalType.DATE)
+    private Date dateDepartCommission;
+    @Temporal(TemporalType.DATE)
+    private Date dateFinCommission;
+    @ManyToOne
+    private MembreCommission chefCommission;
+    @OneToMany
+    private List<CommissionItem> commissionItems;
 
-	public Commission(Long id, Date dateDepartCommission, Date dateFinCommission, MembreCommision chefCommision) {
-		this.id = id;
-		this.dateDepartCommission = dateDepartCommission;
-		this.dateFinCommission = dateFinCommission;
-		this.chefCommision = chefCommision;
-	}
+    public Commission() {
+    }
 
+    public Commission(Long id, Date dateDepartCommission, Date dateFinCommission, MembreCommission chefCommision,
+            List<CommissionItem> commissionItems) {
+        this.id = id;
+        this.dateDepartCommission = dateDepartCommission;
+        this.dateFinCommission = dateFinCommission;
+        this.chefCommission = chefCommision;
+        this.commissionItems = commissionItems;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Date getDateDepartCommission() {
+        return dateDepartCommission;
+    }
 
+    public String getRef() {
+        return ref;
+    }
 
-	public Date getDateDepartCommission() {
-		return dateDepartCommission;
-	}
+    public void setRef(String ref) {
+        this.ref = ref;
+    }
 
+    public List<CommissionItem> getCommissionItems() {
+        return commissionItems;
+    }
 
-	public void setDateDepartCommission(Date dateDepartCommission) {
-		this.dateDepartCommission = dateDepartCommission;
-	}
+    public void setCommissionItems(List<CommissionItem> commissionItems) {
+        this.commissionItems = commissionItems;
+    }
 
+    public void setDateDepartCommission(Date dateDepartCommission) {
+        this.dateDepartCommission = dateDepartCommission;
+    }
 
-	public Date getDateFinCommission() {
-		return dateFinCommission;
-	}
+    public Date getDateFinCommission() {
+        return dateFinCommission;
+    }
 
+    public void setDateFinCommission(Date dateFinCommission) {
+        this.dateFinCommission = dateFinCommission;
+    }
 
-	public void setDateFinCommission(Date dateFinCommission) {
-		this.dateFinCommission = dateFinCommission;
-	}
+    public MembreCommission getChefCommision() {
+        return chefCommission;
+    }
 
+    public void setChefCommision(MembreCommission chefCommision) {
+        this.chefCommission = chefCommision;
+    }
 
-	public MembreCommision getChefCommision() {
-		return chefCommision;
-	}
+    @Override
+    public String toString() {
+        return "Commission [id=" + id + ", dateDepartCommission=" + dateDepartCommission + ", dateFinCommission="
+                + dateFinCommission + ", chefCommission=" + chefCommission + ", commisionItems=" + commissionItems + "]";
+    }
 
-
-	public void setChefCommision(MembreCommision chefCommision) {
-		this.chefCommision = chefCommision;
-	}
-
-
-	public List<CommisionItem> getCommisionItems() {
-		return commisionItems;
-	}
-
-
-	public void setCommisionItems(List<CommisionItem> commisionItems) {
-		this.commisionItems = commisionItems;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Commission [id=" + id + ", dateDepartCommission=" + dateDepartCommission + ", dateFinCommission="
-				+ dateFinCommission + ", chefCommision=" + chefCommision + ", commisionItems=" + commisionItems + "]";
-	}
-	
-	
-	
-	
 }
